@@ -18,6 +18,6 @@ public interface CategoryMapper {
     Category toCategory(Categoria categoria);
 
     @InheritInverseConfiguration
-    @Mapping(target = "productos", ignore = true)
+    @Mapping(target = "idCategoria", ignore = true)
     Categoria toCategoria(Category category);
 }

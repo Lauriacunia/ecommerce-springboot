@@ -8,6 +8,7 @@ import com.taylor.demoecommerce.persistence.mapper.ProductMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,9 +25,10 @@ public class ProductoRepository implements ProductRepository {
         return mapper.toProducts(productos);
     }
     @Override
-    public Optional<Product> getByCategory(int categoryId) {
+    public List<Product> getByCategory(int categoryId) {
+        System.out.println("Llega al repositorio");
         List<Producto> productos = productoCrudRepository.findByIdCategoriaOrderByNombreAsc(categoryId);
-        return Optional.ofNullable((Product) mapper.toProducts(productos));
+        return mapper.toProducts(productos);
     }
 
 

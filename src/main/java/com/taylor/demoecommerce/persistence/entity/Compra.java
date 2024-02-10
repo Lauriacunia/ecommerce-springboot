@@ -21,7 +21,7 @@ public class Compra {
     private String comentario;
     private String estado;
 
-    @OneToMany(mappedBy = "producto")
+    @OneToMany(mappedBy = "compra")
     private List<CompraProducto> productos;
 
     @ManyToOne
