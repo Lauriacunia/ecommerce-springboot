@@ -13,7 +13,7 @@ public class Compra {
     @Column(name="id_compra")
     private Integer idCompra;
     @Column(name="id_cliente")
-    private Integer idCliente;
+    private String idCliente;
     private LocalDateTime fecha;
     @Column(name="medio_pago")
     private String medioPago;
@@ -21,7 +21,7 @@ public class Compra {
     private String comentario;
     private String estado;
 
-    @OneToMany(mappedBy = "compra")
+    @OneToMany(mappedBy = "compra", cascade = {CascadeType.ALL})
     private List<CompraProducto> productos;
 
     @ManyToOne
@@ -36,11 +36,11 @@ public class Compra {
         this.idCompra = idCompra;
     }
 
-    public Integer getIdCliente() {
+    public String getIdCliente() {
         return idCliente;
     }
 
-    public void setIdCliente(Integer idCliente) {
+    public void setIdCliente(String idCliente) {
         this.idCliente = idCliente;
     }
 
@@ -74,5 +74,34 @@ public class Compra {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public List<CompraProducto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<CompraProducto> productos) {
+        this.productos = productos;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    @Override
+    public String toString() {
+        return "Compra{" +
+                "compraId=" + idCompra +
+                ", clienteId='" + idCliente + '\'' +
+                ", fecha=" + fecha +
+                ", medioPago='" + medioPago + '\'' +
+                ", comentario='" + comentario + '\'' +
+                ", estado='" + estado + '\'' +
+                ", productos=" + productos +
+                '}';
     }
 }
