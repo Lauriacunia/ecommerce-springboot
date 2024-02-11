@@ -5,10 +5,6 @@
 ## 🧑‍💻 Description
 REST API for ecommerce consumption built with Spring Boot 3.2.2, Java 17, and PostgreSQL. It allows for creating and listing products, listing all products by a specific category, or searching for a product by ID. It also provides the functionality to view a customer's purchase history or the total number of registered purchases.
 
-# 🚀 Deploy
-
-[Te invito a conocer el sitio ](https://oms-challenge-laura.netlify.app/)
-
 
 ## 🛠️ Technologies
 
